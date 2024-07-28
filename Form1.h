@@ -40,7 +40,7 @@ namespace oop_laba8 {
   private: System::Windows::Forms::TextBox^ unitTextBox;
   private: System::Windows::Forms::TextBox^ minValueTextBox;
   private: System::Windows::Forms::TextBox^ maxValueTextBox;
-  private: System::Windows::Forms::ComboBox^ materialComboBox;
+  private: System::Windows::Forms::TextBox^ materialTextBox;
   private: vector<MeasurementDevice*>* devices;
 
   private:
@@ -54,16 +54,15 @@ namespace oop_laba8 {
       this->unitTextBox = (gcnew System::Windows::Forms::TextBox());
       this->minValueTextBox = (gcnew System::Windows::Forms::TextBox());
       this->maxValueTextBox = (gcnew System::Windows::Forms::TextBox());
-      this->materialComboBox = (gcnew System::Windows::Forms::ComboBox());
+      this->materialTextBox = (gcnew System::Windows::Forms::TextBox());
       this->printButton = (gcnew System::Windows::Forms::Button());
       this->SuspendLayout();
       // 
       // createButton
       // 
-      this->createButton->Location = System::Drawing::Point(17, 13);
-      this->createButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->createButton->Location = System::Drawing::Point(14, 13);
       this->createButton->Name = L"createButton";
-      this->createButton->Size = System::Drawing::Size(90, 23);
+      this->createButton->Size = System::Drawing::Size(75, 23);
       this->createButton->TabIndex = 0;
       this->createButton->Text = L"Create";
       this->createButton->UseVisualStyleBackColor = true;
@@ -71,10 +70,9 @@ namespace oop_laba8 {
       // 
       // deleteButton
       // 
-      this->deleteButton->Location = System::Drawing::Point(17, 43);
-      this->deleteButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->deleteButton->Location = System::Drawing::Point(14, 43);
       this->deleteButton->Name = L"deleteButton";
-      this->deleteButton->Size = System::Drawing::Size(90, 23);
+      this->deleteButton->Size = System::Drawing::Size(75, 23);
       this->deleteButton->TabIndex = 1;
       this->deleteButton->Text = L"Delete";
       this->deleteButton->UseVisualStyleBackColor = true;
@@ -83,65 +81,57 @@ namespace oop_laba8 {
       // listBoxDevices
       // 
       this->listBoxDevices->FormattingEnabled = true;
-      this->listBoxDevices->Location = System::Drawing::Point(17, 181);
-      this->listBoxDevices->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->listBoxDevices->Location = System::Drawing::Point(135, 178);
       this->listBoxDevices->Name = L"listBoxDevices";
-      this->listBoxDevices->Size = System::Drawing::Size(134, 82);
+      this->listBoxDevices->Size = System::Drawing::Size(120, 95);
       this->listBoxDevices->TabIndex = 4;
       this->listBoxDevices->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::listBoxDevices_SelectedIndexChanged);
       // 
       // deviceNameTextBox
       // 
-      this->deviceNameTextBox->Location = System::Drawing::Point(159, 15);
-      this->deviceNameTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->deviceNameTextBox->Location = System::Drawing::Point(135, 13);
       this->deviceNameTextBox->Name = L"deviceNameTextBox";
-      this->deviceNameTextBox->Size = System::Drawing::Size(143, 20);
+      this->deviceNameTextBox->Size = System::Drawing::Size(120, 20);
       this->deviceNameTextBox->TabIndex = 5;
       this->deviceNameTextBox->Text = L"Device Name";
       // 
       // unitTextBox
       // 
-      this->unitTextBox->Location = System::Drawing::Point(159, 43);
-      this->unitTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->unitTextBox->Location = System::Drawing::Point(135, 43);
       this->unitTextBox->Name = L"unitTextBox";
-      this->unitTextBox->Size = System::Drawing::Size(143, 20);
+      this->unitTextBox->Size = System::Drawing::Size(120, 20);
       this->unitTextBox->TabIndex = 6;
       this->unitTextBox->Text = L"Unit";
       // 
       // minValueTextBox
       // 
-      this->minValueTextBox->Location = System::Drawing::Point(159, 73);
-      this->minValueTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->minValueTextBox->Location = System::Drawing::Point(135, 73);
       this->minValueTextBox->Name = L"minValueTextBox";
-      this->minValueTextBox->Size = System::Drawing::Size(143, 20);
+      this->minValueTextBox->Size = System::Drawing::Size(120, 20);
       this->minValueTextBox->TabIndex = 7;
       this->minValueTextBox->Text = L"Min Value";
       // 
       // maxValueTextBox
       // 
-      this->maxValueTextBox->Location = System::Drawing::Point(159, 103);
-      this->maxValueTextBox->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->maxValueTextBox->Location = System::Drawing::Point(135, 103);
       this->maxValueTextBox->Name = L"maxValueTextBox";
-      this->maxValueTextBox->Size = System::Drawing::Size(143, 20);
+      this->maxValueTextBox->Size = System::Drawing::Size(120, 20);
       this->maxValueTextBox->TabIndex = 8;
       this->maxValueTextBox->Text = L"Max Value";
       // 
-      // materialComboBox
+      // materialTextBox
       // 
-      this->materialComboBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-      this->materialComboBox->FormattingEnabled = true;
-      this->materialComboBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Plastic", L"Metal", L"Glass" });
-      this->materialComboBox->Location = System::Drawing::Point(159, 129);
-      this->materialComboBox->Name = L"materialComboBox";
-      this->materialComboBox->Size = System::Drawing::Size(143, 21);
-      this->materialComboBox->TabIndex = 9;
+      this->materialTextBox->Location = System::Drawing::Point(135, 133);
+      this->materialTextBox->Name = L"materialTextBox";
+      this->materialTextBox->Size = System::Drawing::Size(120, 20);
+      this->materialTextBox->TabIndex = 9;
+      this->materialTextBox->Text = L"Material";
       // 
       // printButton
       // 
-      this->printButton->Location = System::Drawing::Point(159, 214);
-      this->printButton->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
+      this->printButton->Location = System::Drawing::Point(14, 133);
       this->printButton->Name = L"printButton";
-      this->printButton->Size = System::Drawing::Size(90, 23);
+      this->printButton->Size = System::Drawing::Size(75, 23);
       this->printButton->TabIndex = 10;
       this->printButton->Text = L"Print";
       this->printButton->UseVisualStyleBackColor = true;
@@ -149,11 +139,11 @@ namespace oop_laba8 {
       // 
       // MainForm
       // 
-      this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+      this->AutoScaleDimensions = System::Drawing::SizeF(5, 13);
       this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-      this->ClientSize = System::Drawing::Size(512, 373);
+      this->ClientSize = System::Drawing::Size(312, 318);
       this->Controls->Add(this->printButton);
-      this->Controls->Add(this->materialComboBox);
+      this->Controls->Add(this->materialTextBox);
       this->Controls->Add(this->maxValueTextBox);
       this->Controls->Add(this->minValueTextBox);
       this->Controls->Add(this->unitTextBox);
@@ -161,13 +151,11 @@ namespace oop_laba8 {
       this->Controls->Add(this->listBoxDevices);
       this->Controls->Add(this->deleteButton);
       this->Controls->Add(this->createButton);
-      this->Margin = System::Windows::Forms::Padding(4, 3, 4, 3);
       this->Name = L"MainForm";
       this->Text = L"Measurement Devices";
       this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
       this->ResumeLayout(false);
       this->PerformLayout();
-
     }
 
   private:
@@ -177,7 +165,7 @@ namespace oop_laba8 {
         string unit = msclr::interop::marshal_as<std::string>(unitTextBox->Text);
         int minValue = Convert::ToInt32(minValueTextBox->Text);
         int maxValue = Convert::ToInt32(maxValueTextBox->Text);
-        string material = msclr::interop::marshal_as<std::string>(materialComboBox->Text);
+        string material = msclr::interop::marshal_as<std::string>(materialTextBox->Text);
         
         if (minValue > maxValue) {
           MessageBox::Show("Min Value should not be greater than Max Value.", "Input Error", MessageBoxButtons::OK, MessageBoxIcon::Error);

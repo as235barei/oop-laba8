@@ -54,16 +54,16 @@ namespace oop_laba8 {
       // nameLabel
       // 
       this->nameLabel->AutoSize = true;
-      this->nameLabel->Location = System::Drawing::Point(13, 106);
+      this->nameLabel->Location = System::Drawing::Point(13, 13);
       this->nameLabel->Name = L"nameLabel";
-      this->nameLabel->Size = System::Drawing::Size(38, 13);
+      this->nameLabel->Size = System::Drawing::Size(35, 13);
       this->nameLabel->TabIndex = 0;
       this->nameLabel->Text = L"Name:";
       // 
       // unitLabel
       // 
       this->unitLabel->AutoSize = true;
-      this->unitLabel->Location = System::Drawing::Point(13, 126);
+      this->unitLabel->Location = System::Drawing::Point(13, 33);
       this->unitLabel->Name = L"unitLabel";
       this->unitLabel->Size = System::Drawing::Size(29, 13);
       this->unitLabel->TabIndex = 1;
@@ -72,7 +72,7 @@ namespace oop_laba8 {
       // minValueLabel
       // 
       this->minValueLabel->AutoSize = true;
-      this->minValueLabel->Location = System::Drawing::Point(13, 146);
+      this->minValueLabel->Location = System::Drawing::Point(13, 53);
       this->minValueLabel->Name = L"minValueLabel";
       this->minValueLabel->Size = System::Drawing::Size(57, 13);
       this->minValueLabel->TabIndex = 2;
@@ -81,7 +81,7 @@ namespace oop_laba8 {
       // maxValueLabel
       // 
       this->maxValueLabel->AutoSize = true;
-      this->maxValueLabel->Location = System::Drawing::Point(13, 166);
+      this->maxValueLabel->Location = System::Drawing::Point(13, 73);
       this->maxValueLabel->Name = L"maxValueLabel";
       this->maxValueLabel->Size = System::Drawing::Size(60, 13);
       this->maxValueLabel->TabIndex = 3;
@@ -90,7 +90,7 @@ namespace oop_laba8 {
       // materialLabel
       // 
       this->materialLabel->AutoSize = true;
-      this->materialLabel->Location = System::Drawing::Point(13, 186);
+      this->materialLabel->Location = System::Drawing::Point(13, 93);
       this->materialLabel->Name = L"materialLabel";
       this->materialLabel->Size = System::Drawing::Size(47, 13);
       this->materialLabel->TabIndex = 4;
@@ -99,7 +99,7 @@ namespace oop_laba8 {
       // statusLabel
       // 
       this->statusLabel->AutoSize = true;
-      this->statusLabel->Location = System::Drawing::Point(11, 15);
+      this->statusLabel->Location = System::Drawing::Point(13, 113);
       this->statusLabel->Name = L"statusLabel";
       this->statusLabel->Size = System::Drawing::Size(40, 13);
       this->statusLabel->TabIndex = 5;
@@ -107,7 +107,7 @@ namespace oop_laba8 {
       // 
       // startButton
       // 
-      this->startButton->Location = System::Drawing::Point(14, 41);
+      this->startButton->Location = System::Drawing::Point(16, 143);
       this->startButton->Name = L"startButton";
       this->startButton->Size = System::Drawing::Size(75, 23);
       this->startButton->TabIndex = 6;
@@ -117,7 +117,7 @@ namespace oop_laba8 {
       // 
       // stopButton
       // 
-      this->stopButton->Location = System::Drawing::Point(14, 70);
+      this->stopButton->Location = System::Drawing::Point(16, 173);
       this->stopButton->Name = L"stopButton";
       this->stopButton->Size = System::Drawing::Size(75, 23);
       this->stopButton->TabIndex = 3;
@@ -127,7 +127,7 @@ namespace oop_laba8 {
       // 
       // printButton
       // 
-      this->printButton->Location = System::Drawing::Point(95, 54);
+      this->printButton->Location = System::Drawing::Point(107, 143);
       this->printButton->Name = L"printButton";
       this->printButton->Size = System::Drawing::Size(75, 23);
       this->printButton->TabIndex = 7;
@@ -139,7 +139,7 @@ namespace oop_laba8 {
       // 
       this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
       this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-      this->ClientSize = System::Drawing::Size(254, 238);
+      this->ClientSize = System::Drawing::Size(284, 230);
       this->Controls->Add(this->printButton);
       this->Controls->Add(this->startButton);
       this->Controls->Add(this->stopButton);
@@ -151,10 +151,8 @@ namespace oop_laba8 {
       this->Controls->Add(this->nameLabel);
       this->Name = L"PrintForm";
       this->Text = L"Print Device Info";
-      this->Load += gcnew System::EventHandler(this, &PrintForm::PrintForm_Load);
       this->ResumeLayout(false);
       this->PerformLayout();
-
     }
 
     void updateStatus() {
@@ -187,7 +185,5 @@ namespace oop_laba8 {
       this->maxValueLabel->Text = "Max Value: " + device->getMaxValue().ToString();
       this->materialLabel->Text = "Material: " + gcnew String(device->getMaterial().c_str());
     }
-  private: System::Void PrintForm_Load(System::Object^ sender, System::EventArgs^ e) {
-  }
-};
+  };
 }

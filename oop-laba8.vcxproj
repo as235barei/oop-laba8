@@ -127,16 +127,11 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MeasurementDevice.h" />
-    <ClInclude Include="PrintForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
+    <ClInclude Include="PrintForm.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrintForm.resx">
-      <DependentUpon>PrintForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
